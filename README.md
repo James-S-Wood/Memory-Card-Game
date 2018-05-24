@@ -1,4 +1,4 @@
-# Card Game
+# Memory Card Game
 
 Project "Memory Game" for Udacity FEND
 
