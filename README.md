@@ -1,4 +1,4 @@
-# Memory Card Game
+# Memory Game "Concentration"
 
 Project "Memory Game" for Udacity FEND
 
