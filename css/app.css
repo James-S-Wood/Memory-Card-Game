@@ -1,0 +1,195 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: rgb(39, 42, 224);
+}
+
+body {
+    background: #ffffff url('../img/background.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Roboto', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.congrats {
+    background: rgba(95, 85, 85, 0.7);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 70%;
+    height: 85%;
+    border-radius: 15px;
+    text-align: center;
+    padding: 2em;
+}
+
+.congrats .button {
+    right: 0;
+    left: 0;
+    bottom: 3em;
+    margin: auto;
+    font-weight: 900;
+    font-size: 1.5em;
+    position: absolute;
+    color: #fff;
+    background: #172177;
+    padding: 0.7em;
+    width: 13em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    transform: rotateY(180deg);
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #3979c2 0%, #7b94da 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: 0.3s;
+    background: #2792dd;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+    pointer-events: none;
+    color: #fff;
+}
+
+.deck .card.match {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: 0.3s;
+    cursor: default;
+    background: #6a94e4;
+    color: #000;
+    font-size: 33px;
+    pointer-events: none;
+}
+
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    color: rgb(0, 81, 255);
+}
+
+.stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    font-weight: 900;
+    font-size: 1.1em;
+    color: #fff;
+    background: #568aeb;
+    padding: 0.7em;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 660px) {
+    body {
+        overflow: hidden;
+    }
+    .score-panel {
+        width: 100%;
+    }
+    .container {
+        margin: 5px;
+    }
+    .deck {
+        width: 100%;
+        min-height: auto;
+        padding: 4vw;
+    }
+    .deck .card {
+        height: 18vw;
+        width: 18vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2vw;
+    }
+    .congrats .button {
+        width: 70%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
